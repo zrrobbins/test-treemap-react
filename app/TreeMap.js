@@ -8,7 +8,7 @@ export default class Treemap extends React.Component {
     super(props);
 
     this.margin = {top: 30, right: 0, bottom: 20, left: 0};
-    this.width = this.props.divWidth - 25;
+    this.width = 960 - 25;
     this.height = 540 - this.margin.top - this.margin.bottom;
     this.formatNumber = d3.format(",%");
     this.rootname = "TOP";

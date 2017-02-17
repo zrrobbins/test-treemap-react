@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './App.css';
 import TreeMap from './TreeMap';
 import d3 from 'd3';
+import myData from '../data/data.json';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -14,18 +15,10 @@ export default class App extends React.Component {
   }
   
   render() {
-    d3.json("../data/data.json", function(err, res) {
-      if (!err) {
-        console.log(res);
-        var data = res;
-        main({title: "Vulnerability"}, {key: "Vulnerabilities", values: data});
-      } else {
-        console.log(err);
-      }
-    });
+    console.log(myData);
     return (
       <div>
-        {/*<TreeMap />*/}
+        <TreeMap data={myData[0]}/>
       </div>
     );
   }
